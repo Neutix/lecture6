@@ -3,10 +3,22 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "cd server && npm start",
+    "dev": "concurrently npm:dev:server",
+    "dev:server": "cd server && npm run dev",
+    "build": "cd server && npm ci",
+    "format": "prettier --write **/*.{js,jsx}",
+    "format:check": "prettier --check **/*.{js,jsx}",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "husky": "^7.0.4",
+    "prettier": "^2.5.1"
+  }
 }
